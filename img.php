@@ -113,7 +113,7 @@
         				alert('保存成功 审核通过后可显示到首页');
         				 window.location.href = "/index.php";
         			}else{
-        				alert('失败')
+        				alert('保存失败')
 
         			}
         		}

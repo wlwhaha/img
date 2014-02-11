@@ -2,7 +2,7 @@
 
   include 'db.class.php';
   $db = new db();
-  $sql = "select * from img order by  rand() limit 34";
+  $sql = "select * from img where isshow = 1 order by  rand() limit 34";
   $img_list = $db->get_all($sql);
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">

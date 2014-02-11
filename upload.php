@@ -5,10 +5,7 @@ if($_POST['data']){
 	convert_data($_POST['data']);
 }
 function convert_data($data){
-	
 	$s = substr($data, 0,23);
-	
-	
 	if(strstr($s, 'jpeg')){
 		$image=base64_decode(str_replace('data:image/jpeg;base64,',"",$data));
 	}else{

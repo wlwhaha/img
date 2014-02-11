@@ -1,0 +1,110 @@
+@charset "utf-8";
+/* CSS Document */
+/*------首页（official index）-----*/
+body { position: relative; padding-top: 40px; }
+.logo{ display:block; width:124px; height:30px; margin-right:40px; margin-top:5px; float:left; /*background:url(../images/logo.png) 0 0 no-repeat;*/}
+.logo img{ width:124px; height:30px;}
+.banner{ width:100%; height:auto; background:url(../images/bg_lossy.jpg) center 0 no-repeat; color:#fff; padding:60px 0 80px; position:relative;}
+.banner .container{position:relative; z-index:2;}
+.banner p{font-size:40px; line-height:1.25;}
+.banner .btn{ padding:15px 24px; font-size:24px; font-weight:200; margin-right:20px; border:0; border-radius:6px;}
+.topbtn{ display:inline-block; background:none; border:none; color:#999; padding:10px 0;}
+.topbtn:hover{ color:#fff; text-decoration:none;}
+.ban-row .span4{/* width:22%; margin-left:8%; width:28%; padding:10px; */ background:rgba(255,255,255,.4); border-radius:6px; box-shadow:0 0 6px rgba(51,255,255,.3); padding:10px 0 5px; margin-bottom:10px;}
+.arrow-line{ float:left; margin:40px 0 0 30px;}
+.ban-row p{ font-size:28px; text-shadow:none; text-align:left; padding:10px;}
+.banner .ban-row{ padding:50px 0;}
+.ban-row{ width:90%; margin:0 auto;}
+.marketing{ text-align:center; padding:0 0 50px;}
+
+.bgc-blue{ background:#3FAAE2;}
+.bgc-purple{ background:#AC72C3;}
+.bgc-green{ background:#07C5AC;}
+.bgc-yellow{ background:#F5CD0C;}
+.marketing .span4{ color:#fff; padding:30px 0;}
+.marketing p{ font-size:28px; line-height:40px;font-family: "Microsoft YaHei", SimHei;}
+.fs20 p{ font-size:24px;}
+.marketing p:first-child{ padding-right:160px;}
+.marketing p:last-child{ padding-left:150px;}
+.bgc-green p:first-child{ padding-right:70px;}
+.bgc-green p:last-child{ padding-left:40px;}
+.contact{/* padding:30px 0;width:60%;*/ color:#fff;  text-align:center; padding:50px 0; margin:50px auto 0;}
+.contact span{ display:inline-block; padding-left:0; font-size:28px;height:100%; line-height:100%;}
+.contact .w-contact{ font-size:48px; padding:0 50px 0 80px;font-family: "Microsoft YaHei", SimHei;/* float:left; */}
+.footer{ background:#A9A9A9; padding:5px 0;}
+.links{ float:right;}
+.links a{ display:inline-block; float:left; color:#fff; text-decoration:underline; margin-right:10px; margin-top:10px;}
+.links .logo-sae,.links .logo-bt{ margin-top:4px;}
+
+.banner p{font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei UI", "Microsoft YaHei", SimHei, "\5B8B\4F53", simsun, sans-serif; font-weight: normal;}
+.jumbotron{text-align:center; text-shadow: 0 1px 3px rgba(0,0,0,.4), 0 0 30px rgba(0,0,0,.075);}
+.marketing h1{ font-family:"Microsoft yahei"; margin: 60px 0 40px; font-size: 48px; font-weight: 200; line-height: 1; letter-spacing: -1px;}
+.jumbotron:after { content: ''; display: block; position: absolute; top:0; right:0; bottom:0; left: 0; background:url(../images/bs-docs.png) repeat center center; opacity: .4;}
+.left{ float:left;}
+
+#scrollUp{ bottom:20px; right:20px; height:38px; width:38px; background:url(../images/top.png) 0 0 no-repeat;}
+
+/*------帮助页面-----*/
+.banner-help{ width:100%; height:80px; background:url(../images/bg_lossy.jpg) center -150px no-repeat; color:#fff; }
+.banner-help p{font-family:"Microsoft yahei"; text-shadow:1px 1px 1px rgba(0,0,0,.4); padding-top:30px; font-size:16px; padding-left:20px;}
+.banner-help p .tit-w{ font-size:28px; display:inline-block; padding-right:10px; padding-left:8px;}
+.banner-help p i{ font-style:normal;}
+
+.help-main{ margin-top:30px; margin-bottom:30px;}
+.left-bar{ background:#E6ECED; border-radius:10px; padding-top:10px; /*border:1px solid #DFE5E6;*/ box-shadow:inset 0 1px 1px rgba(51,51,51,.2);/* padding:10px 10px 10px 20px;*/ padding-bottom:20px;}
+.left-nav h1{ height:28px; font-size:18px; font-family:"Microsoft yahei"; font-weight:normal;}
+.left-nav h1 a{ color:#333; margin-left: 15px;}
+.left-nav h1 a:hover{ text-decoration:none;}
+.left-nav h1 .caret{ margin:17px 5px 0 0;}
+.left-nav dl{ padding-bottom:14px;}
+.left-nav dl dt{font-size:14px; font-weight:bold; padding:8px 30px;}
+.left-nav dl dd a{/*width:134px; height:30px;*/ line-height:30px; display:block; margin-left:6px; padding-left:30px; font-size:14px;}
+.left-nav dl i{color:#B6B6B6; margin-right:6px;}
+.left-nav dl dd a:hover{ text-decoration:none; background:#f1f7f7; border-radius:20px 0 0 20px;}
+.help-cont{ font-family:"Microsoft yahei";}
+.help-cont dl dt{font-size:18px; margin-bottom:11px; font-weight:normal;}
+.help-cont dl dt i{ display:inline-block; font-style:normal; color:#fff; width:24px; height:24px; line-height:24px; text-align:center; background:#9EC38E; border-radius:50%; margin-right:5px; font-family:Arial;}
+.help-cont dl dd{padding-left:20px;}
+.help-cont dl dd p{font-family:"Microsoft yahei"; font-size:14px; line-height:24px; color:#555;  text-indent:2em;}
+.help-cont dl dd img{ width:40%; margin-bottom:10px;}
+.help-cont dl dd a{ display:inline-block; text-indent:2em;}
+.help-cont dl dd p a{ text-indent:0;}
+.official-contact{ border-top:1px solid #B9C6C9; padding:20px 10px 0 30px;}
+.official-contact p{/* line-height:24px;*/ margin-left:70px; margin-bottom:0;}
+.official-contact .w-tit{ display:inline-block; font-size:14px; font-weight:bold; padding-bottom:10px;}
+.qq-num{ font-size:16px; font-weight:bold; color:#607382; vertical-align:middle;}
+.qq-link{/* margin-left:83px;*/ display:block;}
+.img-logo{ display:block; width:50px; height:50px; padding:2px; border:1px solid #d8dada; background:#fff; margin-right:10px; float:left}
+
+@media (max-width: 767px){
+    body{ padding-top:0; padding-left:0; padding-right:0;}
+    /*.navbar{padding-left:20px; padding-right:20px;}*/
+    .links{ float:none;}
+    .left{ float:none;}
+    .banner{ padding:30px 0 20px;}
+    .banner .container { padding:0 10px;}
+    .banner .ban-row {padding:20px 0;}
+    .footer{ padding-left:10px; padding-right:10px;}
+    /*.banner p{ font-size:36px;}
+    .ban-row p{ font-size:24px;}*/
+    .navbar-fixed-top { margin-left:0px; margin-right:0px;}
+    .banner-help p{ padding-top:15px;}
+    .w1{ display:block; padding-top:10px; padding-left:22px;}
+}
+
+@media (max-width: 979px){
+    .nav-collapse, .nav-collapse.collapse {height: 0; overflow: hidden;}
+    .logo{margin-right: 0px;}
+    .contact .w-contact{ padding:0;}
+    .fs20 p{ font-size:18px;}
+    .navbar-fixed-top {margin-bottom:0px;}
+    .help-cont dl dd img{ width:80%;}
+    .logo{ margin-top:0;}
+
+}
+
+@media (max-width: 1200px){
+    .marketing p:first-child{ padding-right:0px;}
+    .marketing p:last-child{ padding-left:0px;}
+
+}

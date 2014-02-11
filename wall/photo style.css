@@ -1,0 +1,57 @@
+﻿*{margin:0px; padding:0px;}
+.pic1,.pic2,.pic3,.pic4,.pic5,.pic6,.pic7,.pic8,.pic9,.pic10,.pic11,.pic12,.pic13,.pic14,.pic15,.pic16,.pic17,.pic18,.pic19,.pic20,.pic21,.pic22,.pic23,.pic24,.pic25,.pic26,.pic27,.pic28,.pic29,.pic30,.pic31,.pic32,.pic33{ width:70px; height:70px; border:5px solid #2c78a9; padding-top:8px; padding-left:7px;position:fixed;}
+
+/******************************************这是第一个图案**********************************************/
+
+.pic1{top:420px; left:10px;}
+.pic2{top:320px; left:10px;}
+.pic3{top:400px; left:100px; width:90px; height:90px;}
+.pic4{ top:270px; left:100px; width:90px; height:90px;}
+.pic5{ top:180px; left:0px; }
+.pic6{ top:220px; left:210px; }
+.pic7{ top:170px; left:300px; }
+.pic8{ top:130px; left:390px; }
+.pic9{ top:90px; left:480px; }
+.pic10{ top:185px; left:480px; width:60px; height:60px;}
+.pic11{ top:180px; left:560px; width:50px; height:50px;}
+.pic12{ top:420px; left:210px; }
+.pic13{ top:420px; left:300px; }
+.pic14{ top:420px; left:390px; }
+.pic15{ top:357px; left:480px; width:130px; height:130px; padding-left:10px; padding-top:11px; }
+
+/******************************************第一个图案结束**********************************************/
+
+
+
+
+/******************************************这是第二个图案**********************************************/
+
+.pic16{ top:65px; left:600px; }
+.pic17,.pic18,.pic19,.pic20{ left:690px; width:90px; height:90px;}
+.pic17{ top:400px;  }
+.pic18{ top:275px; }
+.pic19{ top:150px; }
+.pic20{ top:25px; }
+
+/*****************************************第二个图案结束**********************************************/
+
+
+
+/******************************************这是第三个图案**********************************************/
+
+.pic21,.pic22,.pic23,.pic24,.pic25,.pic26,.pic27,.pic28,.pic29{width:90px; height:90px;}
+.pic21{ top:80px; left:830px;}
+.pic22{ top:110px; left:940px;}
+.pic23{ top:140px; left:1050px;}
+.pic24{ top:170px; left:1160px;}
+
+.pic25{ top:285px; left:1160px;}
+.pic26{ top:400px; left:1160px;}
+.pic27{ top:400px; left:1050px;}
+.pic28{ top:400px; left:940px;}
+.pic29{ top:400px; left:830px;}
+
+.pic30{ top:297px; left:830px; width:80px; height:80px;}
+.pic31{ top:193px; left:830px; width:80px; height:80px;}
+
+/******************************************第三个图案结束**********************************************/

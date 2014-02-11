@@ -1,0 +1,90 @@
+
+*{margin:0;padding:0;}
+a{text-decoration:none;}
+.btn_addPic{
+    display: block;
+    position: relative;
+    width: 96%;
+	height: 39px;
+	overflow: hidden;
+	border: 1px solid #EBEBEB;
+	background: none repeat scroll 0 0 #F3F3F3;
+	color: #999999;
+    cursor: pointer;
+	text-align: center;
+	margin: 0 auto;
+}
+.btn_addPic span{display: block;line-height: 39px;}
+.btn_addPic em {
+	background:url(../images/file_bg.png) 0 0;
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	overflow: hidden;
+	margin: 10px 5px 10px 0;
+	line-height: 20em;
+	vertical-align: middle;
+}
+.btn_addPic:hover em{background-position:-19px 0;}
+.filePrew {
+    display: block;
+	position: absolute;
+    top: 0;
+	left: 0;
+    width: 100%;
+	height: 39px;
+	font-size: 100px; /* 增大不同浏览器的可点击区域 */
+    opacity: 0; /* 实现的关键点 */
+	filter:alpha(opacity=0);/* 兼容IE */
+}
+
+/*
+	img div
+*/
+.img_c{
+	margin: 0 auto;
+	width: 95%;
+	border: 7px solid #cccccc;
+	height: auto;
+}
+.img_b{
+	margin: 0 auto;
+	height: auto;
+
+	width: 98%;
+}
+.img_b img{
+	width: 100%;
+}
+
+.img_c textarea{
+	height: 100px;
+	margin: 0 auto;
+	width: 98%;
+
+	border: 1px solid #BFBFBF;
+    border-radius: 5px;
+    color: #999999;
+    display: block;
+    font-size: 14px;
+    height: 80px;
+    margin: 12px auto;
+    resize: none;
+}
+
+
+
+#test{
+			width: 100%;
+			margin: 0 auto;
+			height: auto;
+		}
+
+
+
+
+
+
+
+
+

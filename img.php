@@ -18,7 +18,7 @@
 <script  type="text/javascript">
 	var canvas ;
 	var ctx ;
-
+	var i=3;
 
     function draw() {
         var img = new Image();
@@ -110,8 +110,7 @@
         		{'data':canvas.toDataURL('image/jpeg')},
         		function(msg){
         			if(msg==1){
-        				alert('保存成功 审核通过后可显示到首页');
-        				 window.location.href = "/index.php";
+        				clock()
         			}else{
         				alert('保存失败')
 
@@ -122,7 +121,7 @@
     });
 </script>
 <body style="width:100%">
-<div id="loading" style="display:none;"><img src="./images/loading.gif" width="100%" alt=""></div>
+<div id="loading" style="display:none;position:fixed; left:50%; top:35%"><img src="./images/loading.gif" width="30%" alt=""></div>
 <div id="gj" style="display:none;">
 	<input type="hidden" id="color" name="color" value="#ef594d" />
 
@@ -162,13 +161,13 @@
 <iframe id="upload_target" name="upload_target" src="./up.php" style="width:0;heigth:0;overflow:hidden;border:0;position: absolute; left:-500px;"></iframe>
 <dl class="pic">
 	<dt><img src="images/logo.png"></dt>
-	<dd>食品级304不锈钢材质，安全可靠 多组合设计，随需组合更便捷 超大容量，适用不同高度奶瓶 1L储水底座，实现40分钟长时间加热 缺水自动断电保护，安全省心 人性化一键旋钮设计，操作简单方便 凹</dd>
+	<dd>感谢您参与中国数字科技馆的互动，点击下方添加图片按钮，用您的移动设备拍下喜欢的展品签字并保，待审核通过后会在大屏幕上显示，如果您的移动设备不支持直接拍照保存，请您先本地拍照在添加图片。</dd>
 	
 </dl>
 <form action="./up.php" method="post" id="img_form"  enctype="multipart/form-data"target="upload_target" >
 	<a href="javascript:void(0);" class="btn_addPic" style="margin-top:10px;">
 		<span>
-			<em>+</em>添加图片
+			<em>+</em><i id="addpic">添加图片</i>
 			</span>
 		<input onChange="up_img();" tabindex="3" title="支持jpg、jpeg、gif、png格式，文件小于5M" size="3" name="pic" class="filePrew" type="file">
 	</a>
@@ -179,11 +178,25 @@
 </div>
 <input type="hidden" id="imgurl" value=""/> 
 <script>
-	function up_img(){
+	function up_img(){		
+	$('#addpic').html('更换图片');
+
 	    $('#img_form').submit();
 	    $('#loading').show();
 	    $('.pic').hide();
 	}
+	
+	function closewin(){
+self.opener=null;
+self.close();
+}
+
+function clock(){
+	i=i-1
+	$('body').html('保存成功 审核通过后可显示到首页<br>'+"本窗口将在"+i+"秒后自动关闭!");
+	if(i>0)setTimeout("clock();",1000);
+	else closewin();
+}
 </script>
 
 </body>

@@ -2,13 +2,16 @@
 
   include 'db.class.php';
   $db = new db();
-  $sql = "select * from img where isshow = 1 order by  rand() limit 34";
+  $sql = "select * from img order by  rand() limit 34";
   $img_list = $db->get_all($sql);
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="./wall2/css/page.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.js"></script>
+
+<script src="src/galleria.js"></script>
 <title>中国数字科技馆</title>
 </head>
 <body>
@@ -116,7 +119,7 @@
   width:97px;   height:97px;
 }
 </style>
-<div class="wrap">
+<div class="wrap" id="content">
 
 <?php
   if($img_list){
@@ -132,5 +135,26 @@
  ?>
   
 </div>
+  <div id="galleria"></div>
+
 </body>
 </html>
+<script>
+    
+    // Load theme
+    Galleria.loadTheme('src/themes/lightbox/galleria.lightbox.js');
+    
+    $('#galleria').galleria({
+           data_source: '#content',
+         extend: function() {
+              this.bind(Galleria.LOADFINISH, function(e) {
+                  $(e.imageTarget).click(this.proxy(function(e) {
+                      e.preventDefault();
+                      this.next();
+                  }))
+              })
+          },
+           keep_source: true
+       });
+
+    </script>

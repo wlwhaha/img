@@ -88,3 +88,6 @@ a{text-decoration:none;}
 
 
 
+.pic{text-align:center; padding:20px;}
+.pic dt img{width:50%;}
+.pic dd{margin:10px 0; font-size:14px; color:#333; line-height:24px;}

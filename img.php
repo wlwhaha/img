@@ -160,12 +160,17 @@
 	</div>
 </div>
 <iframe id="upload_target" name="upload_target" src="./up.php" style="width:0;heigth:0;overflow:hidden;border:0;position: absolute; left:-500px;"></iframe>
+<dl class="pic">
+	<dt><img src="images/logo.png"></dt>
+	<dd>食品级304不锈钢材质，安全可靠 多组合设计，随需组合更便捷 超大容量，适用不同高度奶瓶 1L储水底座，实现40分钟长时间加热 缺水自动断电保护，安全省心 人性化一键旋钮设计，操作简单方便 凹</dd>
+	
+</dl>
 <form action="./up.php" method="post" id="img_form"  enctype="multipart/form-data"target="upload_target" >
 	<a href="javascript:void(0);" class="btn_addPic" style="margin-top:10px;">
 		<span>
 			<em>+</em>添加图片
 			</span>
-		<input onchange="up_img();" tabindex="3" title="支持jpg、jpeg、gif、png格式，文件小于5M" size="3" name="pic" class="filePrew" type="file">
+		<input onChange="up_img();" tabindex="3" title="支持jpg、jpeg、gif、png格式，文件小于5M" size="3" name="pic" class="filePrew" type="file">
 	</a>
 </form>
 <div style="display:none;">
@@ -177,6 +182,7 @@
 	function up_img(){
 	    $('#img_form').submit();
 	    $('#loading').show();
+	    $('.pic').hide();
 	}
 </script>
 

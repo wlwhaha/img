@@ -121,7 +121,7 @@
     });
 </script>
 <body style="width:100%">
-<div id="loading" style="display:none;position:fixed; left:50%; top:35%"><img src="./images/loading.gif" width="30%" alt=""></div>
+<div id="loading" style=" display:none;position:fixed;left:50%; top:50%; padding-left:-18px; padding-top:-18px; width:36px; height:36px;"><img src="./images/loading.gif" width="36" height="36" alt=""></div>
 <div id="gj" style="display:none;">
 	<input type="hidden" id="color" name="color" value="#ef594d" />
 

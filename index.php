@@ -127,7 +127,11 @@
     foreach ($img_list as $key => $value) {
       $n = explode(".", $value['path']);
 ?>
-    <div class="position<?php echo $i;?>"><img src="./data/<?php echo $value['path']; ?>"  height="90%" width="90%"/></div>
+    <div class="position<?php echo $i;?>">
+    <a href="./data/<?php echo $value['path'];?>">
+      <img src="./data/<?php echo $n[0]."_thumb.jpg"; ?>"  height="90%" width="90%"/>
+    </a>
+  </div>
 <?php
     $i++;
     }

@@ -4,6 +4,10 @@
   $db = new db();
   $sql = "select * from img order by  rand() limit 34";
   $img_list = $db->get_all($sql);
+  if($_POST['rand']){
+  echo json_encode($img_list);
+  die();
+  }
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -127,7 +131,7 @@
     foreach ($img_list as $key => $value) {
       $n = explode(".", $value['path']);
 ?>
-    <div class="position<?php echo $i;?>">
+    <div class="position<?php echo $i;?> piclist">
     <a href="./data/<?php echo $value['path'];?>">
       <img src="./data/<?php echo $n[0]."_thumb.jpg"; ?>"  height="90%" width="90%"/>
     </a>
@@ -139,16 +143,39 @@
  ?>
   
 </div>
-  <div id="galleria"></div>
+  <div id="galleria" style=" overflow: hidden;width:0px;height:0px;"></div>
 
 </body>
 </html>
 <script>
     
+  t = setTimeout("timedCount()", 10000)
+  
+  function timedCount(){
+    
+    $.post(
+      "/index.php",
+      {'rand':36},
+      function(data){
+        var arr = jQuery.parseJSON(data);
+        
+        $('.piclist').each(function(x){
+          $(this).find('a').attr('href',"./data/"+arr[x]['path'])
+          $(this).find('a').find('img').attr('src',"./data/"+arr[x]['path'])
+        });
+        imginit()
+      }
+    );
+    t = setTimeout("timedCount()", 10000)
+  }
+  
+  
+  
     // Load theme
     Galleria.loadTheme('src/themes/lightbox/galleria.lightbox.js');
     
-    $('#galleria').galleria({
+  function imginit(){
+  $('#galleria').galleria({
            data_source: '#content',
          extend: function() {
               this.bind(Galleria.LOADFINISH, function(e) {
@@ -160,5 +187,10 @@
           },
            keep_source: true
        });
+  }
+    
+  $(function(){
+  imginit()
+  })
 
     </script>

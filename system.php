@@ -39,7 +39,7 @@
 							<table class="table">
 								<thead>
 									<tr>
-										<th width=10%>
+										<th>
 											<input type="checkbox" name="" id="ckall">
 											<?php if($s==0){?>
 											<button class="btn btn-info" id="tgall" type="button">通过</button>

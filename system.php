@@ -63,6 +63,7 @@
 										if($img_list){
 											$i=1;
 											foreach ($img_list as $key => $value) {
+												 $n = explode(".", $value['path']);
 									?>
 											<tr <?php if($i%2==0)echo' class="success"'; ?>>
 												<td>
@@ -72,7 +73,7 @@
 													<?php echo $value['id']; ?>
 												</td>
 												<td style="text-align:center">
-													<img src="./data/<?php echo $value['path']; ?>" style="height:100px;" alt="">
+													<img src="./data/<?php echo $n[0].'_thumb.jpg';?>" style="height:100px;" alt="">
 												</td>
 												<td>
 													<?php if($s==0){?>

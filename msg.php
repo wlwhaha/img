@@ -23,15 +23,20 @@
 		</span>
 	</a>
 
-	<a href="javascript:void(0);" onclick="closewin" class="btn_addPic" style="margin-top:10px;">
+	<a href="javascript:void(0);" onclick="closewin()" class="btn_addPic" style="margin-top:10px;">
 		<span>
 			<em>+</em>关闭页面
 		</span>
 	</a>
 	<script>
 		function closewin(){
-			self.opener=null;
-			self.close();
+
+		var opened=window.open('about:blank','_self');
+ opened.opener=null;
+ opened.close();
+
+	
+			
 		}
 	</script>
 </body>

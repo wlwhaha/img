@@ -69,8 +69,9 @@ function reset_form()
 </html>
 <?php
     }else{
-        $username = 'wall';
-        $passwrd = 'wall0208';
+		require_once("config.db.php");
+        $username =$db_config["wall_username"];
+        $passwrd = $db_config["wall_password"];
        // var_dump($_POST);die;
         if($username == $_POST['username'] && $passwrd == $_POST['password']){
             $_SESSION['admin_log'] = md5($username);

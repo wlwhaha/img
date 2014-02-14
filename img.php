@@ -110,7 +110,7 @@
         		{'data':canvas.toDataURL('image/jpeg')},
         		function(msg){
         			if(msg==1){
-        				clock()
+        				window.location.href = "./msg.php";
         			}else{
         				alert('保存失败')
 

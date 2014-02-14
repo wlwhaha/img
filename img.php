@@ -122,15 +122,15 @@
 </script>
 <body style="width:100%">
 <div id="loading" style=" display:none;position:fixed;left:50%; top:50%; padding-left:-18px; padding-top:-18px; width:36px; height:36px;"><img src="./images/loading.gif" width="36" height="36" alt=""></div>
-<div id="gj" style="display:none;">
+<div id="gj" style="display:none;margin: 0px auto; width: 100%;">
 	<input type="hidden" id="color" name="color" value="#880000" />
-
+<div style="margin-top:10px; text-align:center; font-size:14px;">
 	<div id="colorpicker">
-		颜色：
-		红<input type="radio" name="col" checked="true" value="#880000" id="">
-		黄<input type="radio" name="col" value="#FFFF00" id="">
-		蓝<input type="radio" name="col" value="#0000CC" id="">
-		白<input type="radio" name="col" value="#FFFFFF" id="">
+		颜色:
+		红<input type="radio" name="col" checked="true" value="#880000" id="">&nbsp;&nbsp;&nbsp;&nbsp;
+		黄<input type="radio" name="col" value="#FFFF00" id="">&nbsp;&nbsp;&nbsp;&nbsp;
+		蓝<input type="radio" name="col" value="#0000CC" id="">&nbsp;&nbsp;&nbsp;&nbsp;
+		白<input type="radio" name="col" value="#FFFFFF" id="">&nbsp;&nbsp;&nbsp;&nbsp;
 		黑<input type="radio" name="col" value="#000000" id="">
 	</div>
 	<script type="text/javascript">
@@ -142,15 +142,14 @@
 	</script>
 	<div style="clear:both"></div>
 
-	<span>笔粗：</span>
+	</div>
 	<div style="clear:both"></div>
-
 	<div id="Slider" class="Dragval">
 		<input type="text" id="bisize" style="display:none;" class="Output"   value="5" />
 	</div>
 	<script type="text/javascript">
 	$(function() {
-	$("#Slider").dragval({ step: 1, min: 1, max: 10, startValue: 5 });
+	$("#Slider").dragval({ step: 1, min: 1, max: 10, startValue: 1 });
 
 	});
 	</script>

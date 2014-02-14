@@ -13,7 +13,7 @@
 		<p style=" color: #999999;
     cursor: pointer;
     text-align: center;height:300px;line-height:300px;">
-			保存成功，审核通过后可现实到首页
+			保存成功，审核通过后可显示到首页
 		</p>
 	</div>
 

@@ -123,12 +123,21 @@
 <body style="width:100%">
 <div id="loading" style=" display:none;position:fixed;left:50%; top:50%; padding-left:-18px; padding-top:-18px; width:36px; height:36px;"><img src="./images/loading.gif" width="36" height="36" alt=""></div>
 <div id="gj" style="display:none;">
-	<input type="hidden" id="color" name="color" value="#ef594d" />
+	<input type="hidden" id="color" name="color" value="#880000" />
 
-	<div id="colorpicker"></div>
+	<div id="colorpicker">
+		颜色：
+		红<input type="radio" name="col" checked="true" value="#880000" id="">
+		黄<input type="radio" name="col" value="#FFFF00" id="">
+		蓝<input type="radio" name="col" value="#0000CC" id="">
+		白<input type="radio" name="col" value="#FFFFFF" id="">
+		黑<input type="radio" name="col" value="#000000" id="">
+	</div>
 	<script type="text/javascript">
 	$(document).ready(function() {
-	$('#colorpicker').farbtastic('#color');
+		$("input[name='col']").change(function(event) {
+			$('#color').val($(this).val())
+		});;
 	});
 	</script>
 	<div style="clear:both"></div>

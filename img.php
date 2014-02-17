@@ -19,10 +19,16 @@
 	var canvas ;
 	var ctx ;
 	var i=3;
-
-    function draw() {
+	var step=0;
+    function draw(s) {
         var img = new Image();
-        img.src = "./upload/"+$('#imgurl').val();
+        if(s==false){
+        	img.src = "./upload/"+$('#imgurl').val();
+        }        
+	    else{
+        	img.src = s;
+
+	    }
         img.onload = function(){
 
 			canvas.width = $('#img_b').width();
@@ -33,17 +39,68 @@
 
 			var ptrn = ctx.createPattern(img,'no-repeat');
 			//ctx.fillStyle = ptrn;
+			//ctx.drawImage(img,50,50,50,50,0,0,50,50);
 			ctx.drawImage(img,0,0,canvas.width,canvas.height);
         }
 	}
 
+	function rotateImg(direction){
+ 		var min_step = 0;
+        var max_step = 3;
+        var img = new Image();
+        img.src = "./upload/"+$('#imgurl').val();
+        var height = img.height;
+        var width = img.width;
+        if (direction == 'right') {
+            step++;
+            //旋转到原位置，即超过最大值
+            step > max_step && (step = min_step);
+        } else {
+            step--;
+            step < min_step && (step = max_step);
+        }
+        var degree = step * 90 * Math.PI / 180;
+
+        canvas.width = $('#img_b').width();
+
+			var w =  canvas.width /img.width;
+
+
+
+        switch (step) {
+            case 0:
+                canvas.width = width;
+                canvas.height = height;
+                ctx.drawImage(img, 0, 0);
+                break;
+            case 1:
+                canvas.width = height;
+                canvas.height = width;
+                ctx.rotate(degree);
+                ctx.drawImage(img, 0, -height);
+                break;
+            case 2:
+                canvas.width = width;
+                canvas.height = height;
+                ctx.rotate(degree);
+                ctx.drawImage(img, -width, -height);
+                break;
+            case 3:
+                canvas.width = height;
+                canvas.height = width;
+                ctx.rotate(degree);
+                ctx.drawImage(img, -width, 0);
+                break;
+        }
+       // $('#data_img').attr('src',canvas.toDataURL('image/jpeg'));
+        draw(canvas.toDataURL('image/jpeg'));
+       // myFunction(false)
+	}
+
 	function myFunction(){
-
-		 	canvas = document.getElementById('test');
+			canvas = document.getElementById('test');
 			ctx = canvas.getContext('2d');
-
-
-		    draw();
+			draw(false);
 
 			ctx.font="40px Arial";
 			//ctx.fillText("Hello World",10,50);
@@ -126,6 +183,11 @@
 	<input type="hidden" id="color" name="color" value="#880000" />
 <div style="margin-top:10px; text-align:center; font-size:14px;">
 	<div id="colorpicker">
+		<input type="button" onclick="rotateImg('left')" value="左" id="left">
+		<input type="button" onclick="rotateImg('right')"value="右" id="right">
+	</div>
+
+	<div id="colorpicker">
 		颜色:
 		红<input type="radio" name="col" checked="true" value="#880000" id="">&nbsp;&nbsp;&nbsp;&nbsp;
 		黄<input type="radio" name="col" value="#FFFF00" id="">&nbsp;&nbsp;&nbsp;&nbsp;
@@ -182,7 +244,8 @@
 </form>
 <div style="display:none;">
 		<img id="tag_img" src=""  >	
-	
+		<img id="data_img" src=""  >	
+		
 </div>
 <input type="hidden" id="imgurl" value=""/> 
 <script>

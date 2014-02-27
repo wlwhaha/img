@@ -14,7 +14,7 @@
         private  $fileSize;                             //文件大小  
         private  $newFileName;                          //新文件名  
         private  $allowType=array('jpg','gif','png');   //  
-        private  $maxSize=2000000;                      //允许文件上传的最大度是2M  
+        private  $maxSize=5000000;                      //允许文件上传的最大度是2M  
         private  $isUserDefName=false;                  //是否采用用户自定义名  
         private  $userDefName;                          //用户定义名称  
         private  $isRandName=true;                      //是否随机命名  

@@ -15,7 +15,7 @@
 
 
 </head>
-<script  type="text/javascript">
+<script  type="text/javascript"> 
 	var canvas ;
 	var ctx ;
 	var i=3;
@@ -175,6 +175,25 @@
         		}
         	);
         });
+		$('#text_btn1').click(function(){
+
+	    	$('#loading').show();
+	    	$('#img_c').hide();
+	    	$('#gj').hide();
+
+        	$.post(
+        		'upload.php',
+        		{'data':canvas.toDataURL('image/jpeg')},
+        		function(msg){
+        			if(msg==1){
+        				window.location.href = "./msg.php";
+        			}else{
+        				alert('保存失败')
+
+        			}
+        		}
+        	);
+        });
     });
 </script>
 <body style="width:100%">
@@ -183,16 +202,19 @@
 	<input type="hidden" id="color" name="color" value="#880000" />
 <div style="margin-top:10px; text-align:center; font-size:14px;">
 	<div id="colorpicker">
-		<input type="button" onclick="rotateImg('left')" value="左" id="left">
+    调整照片方向:
+		<input type="button" onclick="rotateImg('left')" value="左" id="left">&nbsp;&nbsp;&nbsp;
 		<input type="button" onclick="rotateImg('right')"value="右" id="right">
 	</div>
+    <div>&nbsp;
+    </div>
 
 	<div id="colorpicker">
-		颜色:
-		红<input type="radio" name="col" checked="true" value="#880000" id="">&nbsp;&nbsp;&nbsp;&nbsp;
-		黄<input type="radio" name="col" value="#FFFF00" id="">&nbsp;&nbsp;&nbsp;&nbsp;
-		蓝<input type="radio" name="col" value="#0000CC" id="">&nbsp;&nbsp;&nbsp;&nbsp;
-		白<input type="radio" name="col" value="#FFFFFF" id="">&nbsp;&nbsp;&nbsp;&nbsp;
+		签字笔颜色:
+		红<input type="radio" name="col" checked="true" value="#880000" id="">&nbsp;&nbsp;&nbsp;
+		黄<input type="radio" name="col" value="#FFFF00" id="">&nbsp;&nbsp;&nbsp;
+		蓝<input type="radio" name="col" value="#0000CC" id="">&nbsp;&nbsp;&nbsp;
+		白<input type="radio" name="col" value="#FFFFFF" id="">&nbsp;&nbsp;&nbsp;
 		黑<input type="radio" name="col" value="#000000" id="">
 	</div>
 	<script type="text/javascript">
@@ -219,10 +241,15 @@
 	<div style="clear:both"></div>
 	</div>
 <div class="img_c"  id="img_c" style="display: none;">
+<div class="btn_addPic" id="text_btn1" style="width:99%;">
+		<span>
+			保存图片
+		</span>
+	</div>
 	<div class="img_b" id='img_b'>
 		<canvas id="test"></canvas>
 	</div>
-	<div class="btn_addPic" id="text_btn" style="width:98%;margin-bottom:3px;">
+	<div class="btn_addPic" id="text_btn" style="width:99%;">
 		<span>
 			保存图片
 		</span>
@@ -237,7 +264,7 @@
 <form action="./up.php" method="post" id="img_form"  enctype="multipart/form-data"target="upload_target" >
 	<a href="javascript:void(0);" class="btn_addPic" style="margin-top:10px;">
 		<span>
-			<em>+</em><i id="addpic">添加图片</i>
+			<em>+</em><b id="addpic">点击此处上传照片</b>
 			</span>
 		<input onChange="up_img();" tabindex="3" title="支持jpg、jpeg、gif、png格式，文件小于5M" size="3" name="pic" class="filePrew" type="file">
 	</a>

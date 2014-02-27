@@ -1,15 +1,20 @@
 <?php
 
+
 if($_POST['data']){
 	convert_data($_POST['data']);
 }
 function convert_data($data){
+	
 	$s = substr($data, 0,23);
+	
+	
 	if(strstr($s, 'jpeg')){
 		$image=base64_decode(str_replace('data:image/jpeg;base64,',"",$data));
 	}else{
 		$image=base64_decode(str_replace('data:image/png;base64,',"",$data));
 	}
+
 	if(!$image){
 		die('error');
 	}
@@ -18,7 +23,7 @@ function convert_data($data){
 	file_put_contents("./data/".$filename, $image);
 	include 'size.class.php';
 
-	$thumb = new Thumbnail(80, 80);
+	$thumb = new Thumbnail(150, 150);
 	$thumb->loadData($image, 'image/jpeg');
 	$thumb->buildThumb("./data/".$rn.'_thumb.jpg');
 

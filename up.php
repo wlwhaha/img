@@ -1,6 +1,5 @@
 <?php 
 
-
 if(!$_FILES['pic']['name'])die('error');
 
 include './image.class.php';
@@ -10,6 +9,7 @@ $options = array(
 	);
 
 $Up = new UpFile($options);
+//var_dump($_FILES);die;
 
 $s = $Up->uploadFile($_FILES['pic']);
 
@@ -19,7 +19,7 @@ if($s == 0){
 
    echo $str .=  "<script> window.parent.document.getElementById('img_c').style.display='block';window.parent.document.getElementById('gj').style.display='block';window.parent.document.getElementById('loading').style.display='none';window.parent.myFunction();</script>";
 }else{
-   echo "<script> window.parent.alert('上传失败 请重新上传')</script>";
+   echo "<script> window.parent.alert('".$Up->getErrorMsg($s)."')</script>";
 }
 
 die;
